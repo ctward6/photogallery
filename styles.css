@@ -69,13 +69,20 @@ img {
 body {
     background-color: #000000;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
+    max-width: 485px;
+    margin: 0 auto;
 }
 
-@media screen and (min-width: 881px) {
+@media screen and (min-width: 880px) {
     body {
-        max-width: 1180px;
-        margin: 0 auto;
+        max-width: 880px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        max-width: 1300px;
     }
 }
 
@@ -100,10 +107,6 @@ figure {
     /* Text-align might be unnecessary */
     text-align: center;
 }
-
-/* figure:not(:first-child) {
-    margin-top: 1em;
-} */
 
 figcaption {
     position: absolute;
@@ -137,17 +140,17 @@ figure:is(:nth-child(-n + 3), :nth-child(7), :last-of-type) figcaption {
 .grid {
     display: grid;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0 0.5rem;
+    gap: 1rem;
+    padding: 1rem 0;
 }
 
-@media screen and (min-width: 590px) {
+@media screen and (min-width: 880px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (min-width: 881px) {
+@media screen and (min-width: 1300px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -171,18 +174,9 @@ button {
 
 form {
     display: grid;
-    grid-template-columns: minmax(536px, 80%);
+    grid-template-columns: 100%; /* Appearance of form's width is controlled by Contact section's max-width */
     justify-content: center;
 }
-
-/* When the form itself reaches 600px or smaller, it takes up 100% of the width of the viewport */
-
-@media screen and (max-width: 590px) {
-    form {
-        grid-template-columns: 100%;
-    }
-}
-
 
 input {
     margin-bottom: 1.5rem;
@@ -237,7 +231,7 @@ h1 {
     padding: 0.625rem;
 }
 
-/* Preventing overflow */
+/* The following media query prevents overflow at narrowest screen sizes (e.g., iPhone 12/13 mini) */
 
 @media screen and (max-width: 475px) {
     h1 {
@@ -288,7 +282,7 @@ p {
 }
 
 main section {
-    padding: 0 10px;
+    padding: 0 0.625rem;
 }
 
 /* Contact section styling */
@@ -296,6 +290,31 @@ main section {
 body > section, footer {
     background-color: #000000;
     color: #FFFFFF;
+}
+
+body > section {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* Adds padding to contact section and footer at narrowest screen sizes (e.g., iPhone 12/13 mini) */
+
+@media screen and (max-width: 452px) {
+    body > section, footer {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    body > section {
+        max-width: 762px; /* ~86.6% of breakpoint - ratio of this section to the body is the same as below this breakpoint */
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    body > section {
+        max-width: 1126px /* ~86.6% of breakpoint - ratio of this section to the body is the same as below this breakpoint */
+    }
 }
 
 body > section :is(h2, p), footer {
