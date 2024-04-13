@@ -69,7 +69,6 @@ img {
 body {
     background-color: #000000;
     font-family: Arial, Helvetica, sans-serif;
-    /* padding: 0 2rem; */
     max-width: 485px;
     margin: 0 auto;
 }
@@ -104,8 +103,6 @@ figcaption, label, input, small {
 
 figure {
     position: relative;
-    /* Text-align might be unnecessary */
-    text-align: center;
 }
 
 figcaption {
@@ -162,8 +159,7 @@ button {
     text-transform: uppercase;
     font-weight: bold;
     justify-self: center;
-    width: 225px;
-    max-width: 100%;
+    width: 60%;
     padding: 10px 5px;
     border: none;
     border-radius: 15px;
@@ -172,9 +168,21 @@ button {
 
 }
 
+@media screen and (min-width: 880px) {
+    button {
+        width: 63%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    button {
+        width: 64%;
+    }
+}
+
 form {
     display: grid;
-    grid-template-columns: 100%; /* Appearance of form's width is controlled by Contact section's max-width */
+    grid-template-columns: 100%; /* Appearance of form's width is controlled by Contact section's max-width value */
     justify-content: center;
 }
 
@@ -188,6 +196,10 @@ label {
 }
 
 /* Form styling > placeholder text styling */
+
+::placeholder {
+    opacity: 1; /* Overrides default opacity of 0.54 in Firefox */
+}
 
 :placeholder-shown {
     color:#007d7b;
@@ -332,10 +344,5 @@ body > section h2 {
 /* Footer-specific styling */
 
 footer {
-    padding-top: 2.5rem;
+    padding-top: 4rem;
 }
-
-
-
-
-
