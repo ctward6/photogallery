@@ -155,7 +155,7 @@ figure:is(:nth-child(-n + 3), :nth-child(7), :last-of-type) figcaption {
 
 /* Form styling */
 
-button {
+form input[type="submit"] {
     text-transform: uppercase;
     font-weight: bold;
     justify-self: center;
@@ -169,13 +169,13 @@ button {
 }
 
 @media screen and (min-width: 880px) {
-    button {
+    form input[type="submit"] {
         width: 63%;
     }
 }
 
 @media screen and (min-width: 1300px) {
-    button {
+    form input[type="submit"] {
         width: 64%;
     }
 }
@@ -278,6 +278,10 @@ nav ul {
 nav a {
     padding: 10px;
     font-size: 1.5em;
+}
+
+nav h2 {
+    display: none;
 }
 
 [href="#top"] {
